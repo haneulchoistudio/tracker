@@ -14,7 +14,7 @@ export default function Select({
   return (
     <div id="select">
       <label htmlFor="">업체 선택</label>
-      <ul className="grid grid-cols-2 gap-5">
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
         <button
           type="button"
           className="p-4 border"
@@ -25,8 +25,11 @@ export default function Select({
         <button type="button" onClick={() => setProvider("ups")}>
           Ups
         </button>
+        <button type="button" onClick={() => setProvider("usps")}>
+          USPS
+        </button>
       </ul>
-      <p>{provider === "fedex" ? "FedEx" : "UPS"} 를 선택하셨습니다.</p>
+      <p>{provider} 를 선택하셨습니다.</p>
       <button
         onClick={pushView}
         type="button"
